@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><process version="10.2.000">
+<?xml version="1.0" encoding="UTF-8"?><process version="10.1.003">
   <context>
     <input/>
     <output/>
     <macros/>
   </context>
-  <operator activated="true" class="process" compatibility="10.2.000" expanded="true" name="Process">
+  <operator activated="true" class="process" compatibility="10.1.003" expanded="true" name="Process">
     <parameter key="logverbosity" value="init"/>
     <parameter key="random_seed" value="2001"/>
     <parameter key="send_mail" value="never"/>
@@ -12,12 +12,12 @@
     <parameter key="process_duration_for_mail" value="30"/>
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
-      <operator activated="true" class="retrieve" compatibility="10.2.000" expanded="true" height="68" name="Retrieve AlumnosTotal" width="90" x="45" y="85">
-        <parameter key="repository_entry" value="data/Alumnos"/>
+      <operator activated="true" class="retrieve" compatibility="10.1.003" expanded="true" height="68" name="Retrieve AlumnosTotal" width="90" x="45" y="85">
+        <parameter key="repository_entry" value="../Data/Alumnos"/>
       </operator>
-      <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="Limpiar" width="90" x="179" y="85">
+      <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="Limpiar" width="90" x="179" y="85">
         <process expanded="true">
-          <operator activated="true" class="replace_missing_values" compatibility="10.2.000" expanded="true" height="103" name="Remplace Missing Edad" width="90" x="112" y="238">
+          <operator activated="true" class="replace_missing_values" compatibility="10.1.003" expanded="true" height="103" name="Remplace Missing Edad" width="90" x="112" y="238">
             <parameter key="return_preprocessing_model" value="false"/>
             <parameter key="attribute_filter_type" value="single"/>
             <parameter key="attribute" value="Edad"/>
@@ -34,9 +34,9 @@
             <parameter key="default" value="average"/>
             <list key="columns"/>
           </operator>
-          <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="Remplace SI/NO Masculino/Femenino" width="90" x="246" y="238">
+          <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="Remplace SI/NO Masculino/Femenino" width="90" x="246" y="238">
             <process expanded="true">
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace SI" width="90" x="45" y="238">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace SI" width="90" x="45" y="238">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value="Sabes Programar"/>
                 <parameter key="attributes" value=""/>
@@ -52,7 +52,7 @@
                 <parameter key="replace_what" value="\bS[iíì]\.?"/>
                 <parameter key="replace_by" value="Si"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace NO" width="90" x="179" y="238">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace NO" width="90" x="179" y="238">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value="Sabes Programar"/>
                 <parameter key="attributes" value=""/>
@@ -68,7 +68,7 @@
                 <parameter key="replace_what" value="\bN[oó]\."/>
                 <parameter key="replace_by" value="No"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Hombre" width="90" x="313" y="238">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Hombre" width="90" x="313" y="238">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -84,7 +84,7 @@
                 <parameter key="replace_what" value="Hombre"/>
                 <parameter key="replace_by" value="Masculino"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Masculino." width="90" x="447" y="238">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Masculino." width="90" x="447" y="238">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -100,7 +100,7 @@
                 <parameter key="replace_what" value="\bMasculino\."/>
                 <parameter key="replace_by" value="Masculino"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Mujer" width="90" x="581" y="238">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Mujer" width="90" x="581" y="238">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -116,7 +116,7 @@
                 <parameter key="replace_what" value="Mujer"/>
                 <parameter key="replace_by" value="Femenino"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Femenino" width="90" x="45" y="85">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Femenino" width="90" x="45" y="85">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -132,7 +132,7 @@
                 <parameter key="replace_what" value="\bFemenino\."/>
                 <parameter key="replace_by" value="Femenino"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="No Binarios" width="90" x="179" y="85">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="No Binarios" width="90" x="179" y="85">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Sexo"/>
                 <parameter key="attributes" value=""/>
@@ -162,7 +162,7 @@
               <portSpacing port="sink_out 2" spacing="0"/>
             </process>
           </operator>
-          <operator activated="true" class="filter_examples" compatibility="10.2.000" expanded="true" height="103" name="Filter Examples" width="90" x="380" y="238">
+          <operator activated="true" class="filter_examples" compatibility="10.1.003" expanded="true" height="103" name="Filter Examples" width="90" x="380" y="238">
             <parameter key="parameter_expression" value=""/>
             <parameter key="condition_class" value="custom_filters"/>
             <parameter key="invert_filter" value="false"/>
@@ -170,7 +170,7 @@
             <parameter key="filters_logic_and" value="true"/>
             <parameter key="filters_check_metadata" value="true"/>
           </operator>
-          <operator activated="true" class="replace_missing_values" compatibility="10.2.000" expanded="true" height="103" name="Replace Missing Values" width="90" x="112" y="85">
+          <operator activated="true" class="replace_missing_values" compatibility="10.1.003" expanded="true" height="103" name="Replace Missing Values" width="90" x="112" y="85">
             <parameter key="return_preprocessing_model" value="false"/>
             <parameter key="attribute_filter_type" value="all"/>
             <parameter key="attribute" value=""/>
@@ -187,7 +187,7 @@
             <parameter key="default" value="average"/>
             <list key="columns"/>
           </operator>
-          <operator activated="true" class="trim" compatibility="10.2.000" expanded="true" height="82" name="Trim" width="90" x="246" y="85">
+          <operator activated="true" class="trim" compatibility="10.1.003" expanded="true" height="82" name="Trim" width="90" x="246" y="85">
             <parameter key="attribute_filter_type" value="all"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value=""/>
@@ -201,7 +201,7 @@
             <parameter key="invert_selection" value="false"/>
             <parameter key="include_special_attributes" value="false"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Replace" width="90" x="380" y="85">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Replace" width="90" x="380" y="85">
             <parameter key="attribute_filter_type" value="single"/>
             <parameter key="attribute" value="Area de Interes"/>
             <parameter key="attributes" value=""/>
@@ -230,9 +230,9 @@
           <portSpacing port="sink_out 2" spacing="0"/>
         </process>
       </operator>
-      <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="Limpiar Lenguajes" width="90" x="313" y="85">
+      <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="Limpiar Lenguajes" width="90" x="313" y="85">
         <process expanded="true">
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Filtrar Lenguajes" width="90" x="112" y="391">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Filtrar Lenguajes" width="90" x="112" y="391">
             <parameter key="attribute_filter_type" value="subset"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value="Que lenguaje te gustaria aprender"/>
@@ -248,9 +248,9 @@
             <parameter key="replace_what" value="\b(?!Java|Python|C\+\+|C#|C|JavaScript)\w+\b"/>
             <parameter key="replace_by" value=" "/>
           </operator>
-          <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="Java" width="90" x="246" y="391">
+          <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="Java" width="90" x="246" y="391">
             <process expanded="true">
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Replace Java" width="90" x="45" y="136">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Replace Java" width="90" x="45" y="136">
                 <parameter key="attribute_filter_type" value="subset"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -266,7 +266,7 @@
                 <parameter key="replace_what" value="(J|j)ava(?:[,;]| y | o |$|\s)"/>
                 <parameter key="replace_by" value="Java"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Replace Java+" width="90" x="179" y="136">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Replace Java+" width="90" x="179" y="136">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Que lenguaje te gustaria aprender"/>
                 <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -282,7 +282,7 @@
                 <parameter key="replace_what" value="Java\+(?=[ ,;])|Java\s*\+(?=[ ,;])"/>
                 <parameter key="replace_by" value="Java"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace JavaPython" width="90" x="313" y="136">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace JavaPython" width="90" x="313" y="136">
                 <parameter key="attribute_filter_type" value="subset"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -298,7 +298,7 @@
                 <parameter key="replace_what" value="JavaPython"/>
                 <parameter key="replace_by" value="Java;Python"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace JavaJavaScript" width="90" x="447" y="136">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace JavaJavaScript" width="90" x="447" y="136">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -314,7 +314,7 @@
                 <parameter key="replace_what" value="JavaJavaScript"/>
                 <parameter key="replace_by" value="Java;JavaScript;"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace JavaC" width="90" x="45" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace JavaC" width="90" x="45" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -330,7 +330,7 @@
                 <parameter key="replace_what" value="\bJavaC\b"/>
                 <parameter key="replace_by" value="Java;C"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace JavaJava" width="90" x="246" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace JavaJava" width="90" x="246" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -346,7 +346,7 @@
                 <parameter key="replace_what" value="JavaJava"/>
                 <parameter key="replace_by" value="Java;"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace JavaPython (2)" width="90" x="447" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace JavaPython (2)" width="90" x="447" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -376,9 +376,9 @@
               <portSpacing port="sink_out 2" spacing="0"/>
             </process>
           </operator>
-          <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="Palabras No Deseadas" width="90" x="380" y="391">
+          <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="Palabras No Deseadas" width="90" x="380" y="391">
             <process expanded="true">
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace .Más" width="90" x="45" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace .Más" width="90" x="45" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -394,7 +394,7 @@
                 <parameter key="replace_what" value=".Más"/>
                 <parameter key="replace_by" value=" "/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace ++, #, +" width="90" x="179" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace ++, #, +" width="90" x="179" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -410,7 +410,7 @@
                 <parameter key="replace_what" value="(?&lt;!\w)(\+\+|\+|#)(?!\w)"/>
                 <parameter key="replace_by" value=" "/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Ninguno" width="90" x="313" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Ninguno" width="90" x="313" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -426,7 +426,7 @@
                 <parameter key="replace_what" value="Ningùno|Ninguno"/>
                 <parameter key="replace_by" value="  "/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Ninguno (2)" width="90" x="447" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Ninguno (2)" width="90" x="447" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -442,7 +442,7 @@
                 <parameter key="replace_what" value="\s­\s|­"/>
                 <parameter key="replace_by" value=" "/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Ninguno (3)" width="90" x="581" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Ninguno (3)" width="90" x="581" y="34">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Que lenguaje te gustaria aprender"/>
                 <parameter key="attributes" value=""/>
@@ -469,7 +469,7 @@
               <portSpacing port="sink_out 2" spacing="0"/>
             </process>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Replace JavaScript" width="90" x="514" y="391">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Replace JavaScript" width="90" x="514" y="391">
             <parameter key="attribute_filter_type" value="subset"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -485,7 +485,7 @@
             <parameter key="replace_what" value="(?i)java\s*script\.?"/>
             <parameter key="replace_by" value="JavaScript"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace C##" width="90" x="112" y="238">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace C##" width="90" x="112" y="238">
             <parameter key="attribute_filter_type" value="subset"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -501,7 +501,7 @@
             <parameter key="replace_what" value="\b[Cc]\#+"/>
             <parameter key="replace_by" value="C#"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace Python" width="90" x="246" y="238">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace Python" width="90" x="246" y="238">
             <parameter key="attribute_filter_type" value="subset"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -517,7 +517,7 @@
             <parameter key="replace_what" value="(?i)\b(P[h]?y[t]?h?o[n]|pyhton)\b"/>
             <parameter key="replace_by" value="Python"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace C++" width="90" x="380" y="238">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace C++" width="90" x="380" y="238">
             <parameter key="attribute_filter_type" value="subset"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value="Lenguaje que conoces|Que lenguaje te gustaria aprender"/>
@@ -533,7 +533,7 @@
             <parameter key="replace_what" value="[Cc]\++(\s*[,;]\s*[Cc]\++)*"/>
             <parameter key="replace_by" value="C++"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remplace C" width="90" x="514" y="238">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remplace C" width="90" x="514" y="238">
             <parameter key="attribute_filter_type" value="subset"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value="Pase Reglamentado|Que lenguaje te gustaria aprender"/>
@@ -549,7 +549,7 @@
             <parameter key="replace_what" value="\b[Cc]\b"/>
             <parameter key="replace_by" value="C"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Replace Spaces" width="90" x="112" y="85">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Replace Spaces" width="90" x="112" y="85">
             <parameter key="attribute_filter_type" value="all"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value=""/>
@@ -564,7 +564,7 @@
             <parameter key="include_special_attributes" value="false"/>
             <parameter key="replace_what" value="(?&lt;!\S) (?!\S)"/>
           </operator>
-          <operator activated="true" class="trim" compatibility="10.2.000" expanded="true" height="82" name="Trim (2)" width="90" x="246" y="85">
+          <operator activated="true" class="trim" compatibility="10.1.003" expanded="true" height="82" name="Trim (2)" width="90" x="246" y="85">
             <parameter key="attribute_filter_type" value="all"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value=""/>
@@ -578,7 +578,7 @@
             <parameter key="invert_selection" value="true"/>
             <parameter key="include_special_attributes" value="true"/>
           </operator>
-          <operator activated="false" class="split" compatibility="10.2.000" expanded="true" height="82" name="Split (2)" width="90" x="380" y="85">
+          <operator activated="false" class="split" compatibility="10.1.003" expanded="true" height="82" name="Split (2)" width="90" x="380" y="85">
             <parameter key="attribute_filter_type" value="single"/>
             <parameter key="attribute" value="Que lenguaje te gustaria aprender"/>
             <parameter key="attributes" value=""/>
@@ -594,7 +594,7 @@
             <parameter key="split_pattern" value="\sy\s|[,;]|\s"/>
             <parameter key="split_mode" value="ordered_split"/>
           </operator>
-          <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Replace Spaces (2)" width="90" x="514" y="85">
+          <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Replace Spaces (2)" width="90" x="514" y="85">
             <parameter key="attribute_filter_type" value="all"/>
             <parameter key="attribute" value=""/>
             <parameter key="attributes" value=""/>
@@ -627,7 +627,7 @@
           <portSpacing port="sink_out 2" spacing="0"/>
         </process>
       </operator>
-      <operator activated="false" class="blending:generate_columns" compatibility="10.2.000" expanded="true" height="82" name="Generate Attributes" width="90" x="112" y="493">
+      <operator activated="false" class="blending:generate_columns" compatibility="10.1.003" expanded="true" height="82" name="Generate Attributes" width="90" x="112" y="493">
         <list key="function_descriptions">
           <parameter key="Java" value="if([Que lenguaje te gustaria aprender_1] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_2] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_3] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_4] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_5] == &quot;Java&quot;, 1, 0)  || if([Que lenguaje te gustaria aprender_6] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_6] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_7] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_8] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_9] == &quot;Java&quot;,1, 0) || if([Que lenguaje te gustaria aprender_10] == &quot;Java&quot;, 1, 0) || if([Que lenguaje te gustaria aprender_11] == &quot;Java&quot;, 1, 0)"/>
           <parameter key="Python" value="contains([Que lenguaje te gustaria aprender_1], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_2], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_3], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_4], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_5], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_6], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_7], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_8], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_9], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_10], &quot;Python&quot;) || contains([Que lenguaje te gustaria aprender_11], &quot;Python&quot;)"/>
@@ -638,7 +638,7 @@
         </list>
         <parameter key="keep_all_columns" value="true"/>
       </operator>
-      <operator activated="true" class="map" compatibility="10.2.000" expanded="true" height="82" name="Map" width="90" x="447" y="85">
+      <operator activated="true" class="map" compatibility="10.1.003" expanded="true" height="82" name="Map" width="90" x="447" y="85">
         <parameter key="attribute_filter_type" value="single"/>
         <parameter key="attribute" value="Sabes Programar"/>
         <parameter key="attributes" value=""/>
@@ -657,16 +657,16 @@
         <parameter key="consider_regular_expressions" value="true"/>
         <parameter key="add_default_mapping" value="false"/>
       </operator>
-      <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="ICO SEXO PROGRAMA" width="90" x="581" y="85">
+      <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="ICO SEXO PROGRAMA" width="90" x="581" y="85">
         <process expanded="true">
-          <operator activated="true" class="blending:select_attributes" compatibility="10.2.000" expanded="true" height="82" name="SELECT SEXO PROGRAMA ICO" width="90" x="45" y="34">
+          <operator activated="true" class="blending:select_attributes" compatibility="10.1.003" expanded="true" height="82" name="SELECT SEXO PROGRAMA ICO" width="90" x="179" y="187">
             <parameter key="type" value="include attributes"/>
             <parameter key="attribute_filter_type" value="a subset"/>
             <parameter key="select_attribute" value=""/>
             <parameter key="select_subset" value="ICO fue tu primera opcion␞Sabes Programar␞Sexo"/>
             <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
           </operator>
-          <operator activated="true" class="blending:generate_columns" compatibility="10.2.000" expanded="true" height="82" name="ICO PROGRAMA SEXO" width="90" x="179" y="34">
+          <operator activated="true" class="blending:generate_columns" compatibility="10.1.003" expanded="true" height="82" name="ICO PROGRAMA SEXO" width="90" x="313" y="187">
             <list key="function_descriptions">
               <parameter key="Masculino Programa ICO" value="contains(Sexo, &quot;Masculino&quot;) &amp;&amp; contains([ICO fue tu primera opcion], &quot;Si&quot;) &amp;&amp; contains([Sabes Programar], &quot;Si&quot;)"/>
               <parameter key="Femenino Programa ICO" value="contains(Sexo, &quot;Femenino&quot;) &amp;&amp; contains([ICO fue tu primera opcion], &quot;Si&quot;) &amp;&amp; contains([Sabes Programar], &quot;Si&quot;)"/>
@@ -675,7 +675,7 @@
             </list>
             <parameter key="keep_all_columns" value="true"/>
           </operator>
-          <operator activated="false" class="filter_examples" compatibility="10.2.000" expanded="true" height="103" name="Filter Examples (2)" width="90" x="581" y="340">
+          <operator activated="false" class="filter_examples" compatibility="10.1.003" expanded="true" height="103" name="Filter Examples (2)" width="90" x="581" y="340">
             <parameter key="parameter_expression" value=""/>
             <parameter key="condition_class" value="custom_filters"/>
             <parameter key="invert_filter" value="false"/>
@@ -683,9 +683,9 @@
             <parameter key="filters_logic_and" value="true"/>
             <parameter key="filters_check_metadata" value="true"/>
           </operator>
-          <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="Rename ICO" width="90" x="313" y="34">
+          <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="Rename ICO" width="90" x="447" y="187">
             <process expanded="true">
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="M_P_ICO" width="90" x="45" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="M_P_ICO" width="90" x="45" y="34">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Masculino Programa ICO"/>
                 <parameter key="attributes" value=""/>
@@ -701,7 +701,7 @@
                 <parameter key="replace_what" value="true"/>
                 <parameter key="replace_by" value="M_P_ICO"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="F_P_ICO" width="90" x="179" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="F_P_ICO" width="90" x="179" y="34">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Femenino Programa ICO"/>
                 <parameter key="attributes" value=""/>
@@ -717,7 +717,7 @@
                 <parameter key="replace_what" value="true"/>
                 <parameter key="replace_by" value="F_P_ICO"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="M_P_NoICO" width="90" x="313" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="M_P_NoICO" width="90" x="313" y="34">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Masculino Programa No ICO"/>
                 <parameter key="attributes" value=""/>
@@ -733,7 +733,7 @@
                 <parameter key="replace_what" value="true"/>
                 <parameter key="replace_by" value="M_P_NoICO"/>
               </operator>
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="F_P_NoICO" width="90" x="447" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="F_P_NoICO" width="90" x="447" y="34">
                 <parameter key="attribute_filter_type" value="single"/>
                 <parameter key="attribute" value="Femenino Programa No ICO"/>
                 <parameter key="attributes" value=""/>
@@ -760,9 +760,9 @@
               <portSpacing port="sink_out 2" spacing="0"/>
             </process>
           </operator>
-          <operator activated="true" class="subprocess" compatibility="10.2.000" expanded="true" height="82" name="JOIN" width="90" x="514" y="34">
+          <operator activated="true" class="subprocess" compatibility="10.1.003" expanded="true" height="82" name="JOIN" width="90" x="179" y="34">
             <process expanded="true">
-              <operator activated="true" class="replace" compatibility="10.2.000" expanded="true" height="82" name="Remove False" width="90" x="45" y="34">
+              <operator activated="true" class="replace" compatibility="10.1.003" expanded="true" height="82" name="Remove False" width="90" x="45" y="34">
                 <parameter key="attribute_filter_type" value="all"/>
                 <parameter key="attribute" value=""/>
                 <parameter key="attributes" value=""/>
@@ -777,22 +777,22 @@
                 <parameter key="include_special_attributes" value="false"/>
                 <parameter key="replace_what" value="false"/>
               </operator>
-              <operator activated="true" class="multiply" compatibility="10.2.000" expanded="true" height="145" name="Multiply" width="90" x="246" y="34"/>
-              <operator activated="true" class="blending:select_attributes" compatibility="10.2.000" expanded="true" height="82" name="SELECT M_P_NoICO" width="90" x="380" y="340">
+              <operator activated="true" class="multiply" compatibility="10.1.003" expanded="true" height="145" name="Multiply" width="90" x="179" y="34"/>
+              <operator activated="true" class="blending:select_attributes" compatibility="10.1.003" expanded="true" height="82" name="SELECT M_P_NoICO" width="90" x="380" y="340">
                 <parameter key="type" value="include attributes"/>
                 <parameter key="attribute_filter_type" value="one attribute"/>
                 <parameter key="select_attribute" value="Masculino Programa No ICO"/>
                 <parameter key="select_subset" value="Femenino Programa ICO␞Masculino Programa ICO"/>
                 <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
               </operator>
-              <operator activated="true" class="blending:select_attributes" compatibility="10.2.000" expanded="true" height="82" name="SELECT F_P_NoICO" width="90" x="380" y="238">
+              <operator activated="true" class="blending:select_attributes" compatibility="10.1.003" expanded="true" height="82" name="SELECT F_P_NoICO" width="90" x="380" y="238">
                 <parameter key="type" value="include attributes"/>
                 <parameter key="attribute_filter_type" value="one attribute"/>
                 <parameter key="select_attribute" value="Femenino Programa No ICO"/>
                 <parameter key="select_subset" value="Femenino Programa ICO␞Masculino Programa ICO"/>
                 <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
               </operator>
-              <operator activated="true" class="concurrency:join" compatibility="10.2.000" expanded="true" height="82" name="Join NoIco" width="90" x="581" y="289">
+              <operator activated="true" class="concurrency:join" compatibility="10.1.003" expanded="true" height="82" name="Join NoIco" width="90" x="581" y="289">
                 <parameter key="remove_double_attributes" value="true"/>
                 <parameter key="join_type" value="outer"/>
                 <parameter key="use_id_attribute_as_key" value="false"/>
@@ -801,21 +801,21 @@
                 </list>
                 <parameter key="keep_both_join_attributes" value="false"/>
               </operator>
-              <operator activated="true" class="blending:select_attributes" compatibility="10.2.000" expanded="true" height="82" name="SELECT M_P_ICO" width="90" x="380" y="136">
+              <operator activated="true" class="blending:select_attributes" compatibility="10.1.003" expanded="true" height="82" name="SELECT M_P_ICO" width="90" x="380" y="136">
                 <parameter key="type" value="include attributes"/>
                 <parameter key="attribute_filter_type" value="one attribute"/>
                 <parameter key="select_attribute" value="Masculino Programa ICO"/>
                 <parameter key="select_subset" value="Femenino Programa ICO␞Masculino Programa ICO"/>
                 <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
               </operator>
-              <operator activated="true" class="blending:select_attributes" compatibility="10.2.000" expanded="true" height="82" name="SELECT F_P_ICO" width="90" x="380" y="34">
+              <operator activated="true" class="blending:select_attributes" compatibility="10.1.003" expanded="true" height="82" name="SELECT F_P_ICO" width="90" x="380" y="34">
                 <parameter key="type" value="include attributes"/>
                 <parameter key="attribute_filter_type" value="one attribute"/>
                 <parameter key="select_attribute" value="Femenino Programa ICO"/>
                 <parameter key="select_subset" value="Femenino Programa ICO␞Masculino Programa ICO"/>
                 <parameter key="also_apply_to_special_attributes_(id,_label..)" value="false"/>
               </operator>
-              <operator activated="true" class="concurrency:join" compatibility="10.2.000" expanded="true" height="82" name="Join ICO" width="90" x="581" y="85">
+              <operator activated="true" class="concurrency:join" compatibility="10.1.003" expanded="true" height="82" name="Join ICO" width="90" x="581" y="85">
                 <parameter key="remove_double_attributes" value="true"/>
                 <parameter key="join_type" value="outer"/>
                 <parameter key="use_id_attribute_as_key" value="false"/>
@@ -824,7 +824,7 @@
                 </list>
                 <parameter key="keep_both_join_attributes" value="false"/>
               </operator>
-              <operator activated="true" class="concurrency:join" compatibility="10.2.000" expanded="true" height="82" name="Join" width="90" x="782" y="187">
+              <operator activated="true" class="concurrency:join" compatibility="10.1.003" expanded="true" height="82" name="Join" width="90" x="782" y="187">
                 <parameter key="remove_double_attributes" value="true"/>
                 <parameter key="join_type" value="outer"/>
                 <parameter key="use_id_attribute_as_key" value="false"/>
@@ -852,7 +852,7 @@
               <portSpacing port="sink_out 2" spacing="0"/>
             </process>
           </operator>
-          <operator activated="true" class="filter_examples" compatibility="10.2.000" expanded="true" height="103" name="FILER ALL" width="90" x="648" y="34">
+          <operator activated="true" class="filter_examples" compatibility="10.1.003" expanded="true" height="103" name="FILER ALL" width="90" x="313" y="34">
             <parameter key="parameter_expression" value=""/>
             <parameter key="condition_class" value="custom_filters"/>
             <parameter key="invert_filter" value="false"/>
@@ -862,12 +862,16 @@
             <parameter key="filters_logic_and" value="true"/>
             <parameter key="filters_check_metadata" value="true"/>
           </operator>
+          <operator activated="true" class="store" compatibility="10.1.003" expanded="true" height="68" name="Store" width="90" x="447" y="34">
+            <parameter key="repository_entry" value="../DataProcessed/Programan_ICO"/>
+          </operator>
           <connect from_port="in 1" to_op="SELECT SEXO PROGRAMA ICO" to_port="example set input"/>
           <connect from_op="SELECT SEXO PROGRAMA ICO" from_port="example set output" to_op="ICO PROGRAMA SEXO" to_port="table input"/>
           <connect from_op="ICO PROGRAMA SEXO" from_port="table output" to_op="Rename ICO" to_port="in 1"/>
           <connect from_op="Rename ICO" from_port="out 1" to_op="JOIN" to_port="in 1"/>
           <connect from_op="JOIN" from_port="out 1" to_op="FILER ALL" to_port="example set input"/>
-          <connect from_op="FILER ALL" from_port="example set output" to_port="out 1"/>
+          <connect from_op="FILER ALL" from_port="example set output" to_op="Store" to_port="input"/>
+          <connect from_op="Store" from_port="through" to_port="out 1"/>
           <portSpacing port="source_in 1" spacing="0"/>
           <portSpacing port="source_in 2" spacing="0"/>
           <portSpacing port="sink_out 1" spacing="0"/>
